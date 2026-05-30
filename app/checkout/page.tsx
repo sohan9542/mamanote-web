@@ -4,9 +4,9 @@ import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { initializePaddle, type Environments } from "@paddle/paddle-js";
 
-function successUrl(transactionId: string): string {
-  const base = "mamanote://subscribe/success";
-  return `${base}?transactionId=${encodeURIComponent(transactionId)}`;
+/** Paddle requires https:// for successUrl — deeplink happens on /checkout/success. */
+function paddleSuccessUrl(transactionId: string): string {
+  return `${window.location.origin}/checkout/success?transactionId=${encodeURIComponent(transactionId)}`;
 }
 
 function CheckoutCard({
@@ -73,7 +73,7 @@ function CheckoutInner() {
           transactionId,
           settings: {
             displayMode: "overlay",
-            successUrl: successUrl(transactionId),
+            successUrl: paddleSuccessUrl(transactionId),
           },
         });
 

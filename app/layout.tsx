@@ -15,12 +15,17 @@ export const metadata: Metadata = {
     template: "%s — MamaNote",
   },
   description: "Baby activity tracker — share logs, subscribe to Plus, and checkout securely.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#FF6B9D",
+  themeColor: "#FF6077",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

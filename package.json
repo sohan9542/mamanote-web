@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "clean": "node scripts/clean.mjs",
     "dev": "next dev",
+    "dev:clean": "node scripts/clean.mjs && next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -14,9 +16,12 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.0",
     "typescript": "^5"
   }
 }

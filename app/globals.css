@@ -1,3 +1,40 @@
+@import "tailwindcss";
+
+/* Tell Tailwind v4 where to scan (paths relative to this file) */
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../lib/**/*.{js,ts,jsx,tsx,mdx}";
+@source "./**/*.{js,ts,jsx,tsx,mdx}";
+
+/* Landing page intro splash */
+@keyframes introLogoZoom {
+  0% {
+    transform: scale(0.78);
+    opacity: 0;
+  }
+  45% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  72% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+@keyframes introOverlayFade {
+  0%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -46,13 +83,14 @@ main {
   line-height: 1;
 }
 
-h1 {
+/* Checkout card only — do not override landing page typography */
+main h1 {
   margin: 0 0 8px;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-p {
+main p {
   margin: 0;
   font-size: 0.9375rem;
   line-height: 1.5;

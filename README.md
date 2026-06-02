@@ -1,6 +1,47 @@
-# MamaNote Checkout (Paddle)
+# MamaNote Web
 
-Minimal Vercel site for MamaNote Plus subscriptions. One page: `/checkout`.
+MamaNote website: Paddle checkout, shared activity log viewer, and related public pages.
+
+## Routes
+
+| Route | Purpose |
+| --- | --- |
+| `/checkout?_ptxn=...` | Paddle subscription checkout (opened from the app) |
+| `/checkout/success` | Post-payment redirect → app deeplink |
+| `/share/[token]` | Public read-only baby activity log (from app share links / QR) |
+
+---
+
+## Shared activity log (`/share/[token]`)
+
+Partners and caregivers open links like:
+
+`https://YOUR-DOMAIN.com/share/a1b2c3d4e5f6...`
+
+Data is fetched server-side from Supabase Edge Function `get-shared-activities`. No login required.
+
+### Env vars (Vercel + local)
+
+| Variable | Required | Notes |
+| --- | --- | --- |
+| `SUPABASE_URL` | Yes | e.g. `https://xxxxx.supabase.co` |
+| `SUPABASE_ANON_KEY` | Yes | Supabase anon key (server-side only) |
+| `NEXT_PUBLIC_APP_STORE_URL` | No | Footer download CTA |
+| `NEXT_PUBLIC_PLAY_STORE_URL` | No | Footer download CTA |
+
+### Mobile app
+
+After deploy, set in the Expo app:
+
+```env
+EXPO_PUBLIC_SHARE_BASE_URL=https://YOUR-DOMAIN.com/share
+```
+
+Share links and QR codes from the app will point to this site.
+
+---
+
+## Paddle checkout
 
 The Expo app calls Supabase `create-checkout`, which returns a URL like:
 
@@ -18,8 +59,10 @@ The app opens that URL in an in-app browser. This page loads Paddle.js and opens
    | --- | --- |
    | `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | `test_...` (sandbox) or `live_...` (production) |
    | `NEXT_PUBLIC_PADDLE_ENV` | `sandbox` or `production` |
+   | `SUPABASE_URL` | `https://xxxxx.supabase.co` |
+   | `SUPABASE_ANON_KEY` | Supabase anon key |
 
-4. Deploy. Note your URL, e.g. `https://mamanote-checkout.vercel.app`.
+4. Deploy. Note your URL, e.g. `https://mamanote.vercel.app`.
 
 ## Paddle dashboard checklist
 
@@ -42,35 +85,22 @@ Other secrets (`PADDLE_API_KEY`, `PADDLE_WEBHOOK_SECRET`, `PADDLE_ENV`) stay on 
 
 ```bash
 cp .env.example .env.local
-# Edit .env.local with your sandbox client token
+# Edit .env.local with your keys
 
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000/checkout](http://localhost:3000/checkout) — shows “Open checkout from the MamaNote app” without `_ptxn`.
-
-## Test flow
-
-1. Deploy with sandbox env vars.
-2. From the MamaNote app (or Supabase `create-checkout`), get a real sandbox checkout URL with `?_ptxn=txn_...`.
-3. Open that URL on a phone (Safari or in-app browser). Paddle checkout should open automatically.
-4. Complete a test payment. Paddle redirects to `/checkout/success`, then the app opens via `mamanote://subscribe/success?transactionId=txn_...`.
-5. Confirm the app handles the deeplink and that `paddle-webhook` updates the subscription in Supabase.
-
-Sample URL shape (replace with a valid sandbox transaction id from your app):
-
-```
-https://YOUR-PROJECT.vercel.app/checkout?_ptxn=txn_01h...
-```
-
-Transaction ids are short-lived and created server-side — you cannot invent a valid `_ptxn` without calling `create-checkout`.
+- Checkout: [http://localhost:3000/checkout](http://localhost:3000/checkout)
+- Share (replace token): [http://localhost:3000/share/YOUR_TOKEN](http://localhost:3000/share/YOUR_TOKEN)
 
 ## Project layout
 
 ```
-app/checkout/page.tsx          Paddle.js checkout (auto-open on _ptxn)
-app/checkout/success/page.tsx  HTTPS success → mamanote:// deeplink
-app/page.tsx            Redirects / → /checkout
-.env.example            Required env vars
+app/share/[token]/page.tsx     Shared activity log (SSR)
+app/checkout/page.tsx          Paddle checkout
+app/checkout/success/page.tsx  Post-payment deeplink
+lib/shared-activities.ts       Supabase edge function client
+components/share/              Share UI components
+.env.example                   Required env vars
 ```

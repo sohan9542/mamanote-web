@@ -61,6 +61,15 @@ function CheckoutInner() {
         const paddle = await initializePaddle({
           environment: envName,
           token,
+          eventCallback: (event) => {
+            if (event.name === "checkout.completed") {
+              const id =
+                (event.data as { id?: string } | undefined)?.id ?? transactionId;
+              window.location.assign(
+                `mamanote://subscribe/success?transactionId=${encodeURIComponent(id)}`,
+              );
+            }
+          },
         });
 
         if (!paddle) {

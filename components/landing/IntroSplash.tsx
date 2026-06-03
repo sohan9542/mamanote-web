@@ -18,7 +18,7 @@ export function IntroSplash() {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#ff6077] pointer-events-none [animation:introOverlayFade_1.5s_ease_forwards]"
+      className="fixed inset-0 z-[9999] flex items-center flex-col gap-2 justify-center bg-[#E32D47] pointer-events-none [animation:introOverlayFade_1.5s_ease_forwards]"
       aria-hidden="true"
     >
       <Image
@@ -27,6 +27,10 @@ export function IntroSplash() {
         className="w-[clamp(96px,18vw,160px)] h-auto [animation:introLogoZoom_1.5s_ease_forwards]"
         sizes="160px"
       />
+      <div className="px-5">
+      <h1 className="text-white text-center text-2xl font-bold">MamaNote</h1>
+      <p className="text-white text-center pt-2 text-sm">Baby activity tracker — share logs, subscribe to Plus, and checkout securely.</p>
+      </div>
     </div>
   );
 }

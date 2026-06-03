@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
         </li>
         <li>
           <strong>Service providers:</strong> We use trusted vendors for hosting, authentication, analytics limited to
-          operations, and payment processing (e.g., Google Play, Paddle on web checkout). They process data only on our
+          operations, and payment processing for Plus subscriptions (e.g., Paddle on our website checkout). They process data only on our
           instructions.
         </li>
         <li>

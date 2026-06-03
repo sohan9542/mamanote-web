@@ -19,7 +19,7 @@ const TOPICS = [
   },
   {
     title: "Billing & subscriptions",
-    body: "Purchases through Google Play are managed in the Play Store → Payments & subscriptions. For refunds and cancellation details, see our Refund Policy. For web checkout issues, include your receipt email when you contact us.",
+    body: "Plus is purchased on our website (not Google Play billing). Payments are processed by Paddle. For refunds, cancellations, or billing questions, see our Refund Policy or email support@mamanote.app with your receipt.",
   },
   {
     title: "Shared access & family",

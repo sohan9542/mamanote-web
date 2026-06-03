@@ -53,14 +53,16 @@ export default function TermsOfServicePage() {
       </ul>
       <p>
         A <strong>7-day free trial</strong> of Plus may be available for new users. No credit card is required to start the
-        trial in the app. After the trial, your account continues on the free plan unless you subscribe. Subscriptions
-        purchased through Google Play are billed and managed by Google under their terms. Web checkout, where available, may
-        be processed by Paddle or other payment partners.
+        trial in the app. After the trial, your account continues on the free plan unless you subscribe.
+      </p>
+      <p>
+        <strong>Plus is purchased on our website</strong> — not through Google Play in-app billing at this time. You may
+        download the free app from Google Play, but subscription and Lifetime payments are completed via our web checkout and
+        processed by Paddle or other payment partners shown at checkout.
       </p>
       <p>
         Prices may change with notice where required by applicable law. Refunds are handled according to our{" "}
-        <a href="/refund-policy">Refund Policy</a> and the store or payment provider through which you purchased (e.g., Google
-        Play refund policies).
+        <a href="/refund-policy">Refund Policy</a> and our payment provider&apos;s terms.
       </p>
 
       <h2>4. Acceptable use</h2>

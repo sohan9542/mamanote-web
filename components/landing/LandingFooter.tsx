@@ -16,12 +16,15 @@ export function LandingFooter() {
         </Link>
 
         <nav className="flex items-center gap-5 flex-wrap" aria-label="Legal and support">
-          <a href="/privacy-policy" className="text-sm font-medium text-[#7a6a96] no-underline transition-colors hover:text-[#1c1428]">
+          <Link href="/privacy-policy" className="text-sm font-medium text-[#7a6a96] no-underline transition-colors hover:text-[#1c1428]">
             Privacy Policy
-          </a>
-          <a href="/terms-of-service" className="text-sm font-medium text-[#7a6a96] no-underline transition-colors hover:text-[#1c1428]">
+          </Link>
+          <Link href="/terms-of-service" className="text-sm font-medium text-[#7a6a96] no-underline transition-colors hover:text-[#1c1428]">
             Terms of Service
-          </a>
+          </Link>
+          <Link href="/refund-policy" className="text-sm font-medium text-[#7a6a96] no-underline transition-colors hover:text-[#1c1428]">
+            Refund Policy
+          </Link>
           <Link href="/support" className="text-sm font-medium text-[#7a6a96] no-underline transition-colors hover:text-[#1c1428]">
             Support
           </Link>

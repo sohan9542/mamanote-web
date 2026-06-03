@@ -58,8 +58,9 @@ export default function TermsOfServicePage() {
         be processed by Paddle or other payment partners.
       </p>
       <p>
-        Prices may change with notice where required by applicable law. Refunds are handled according to the store or payment
-        provider through which you purchased (e.g., Google Play refund policies).
+        Prices may change with notice where required by applicable law. Refunds are handled according to our{" "}
+        <a href="/refund-policy">Refund Policy</a> and the store or payment provider through which you purchased (e.g., Google
+        Play refund policies).
       </p>
 
       <h2>4. Acceptable use</h2>

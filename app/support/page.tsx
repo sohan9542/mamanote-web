@@ -19,7 +19,7 @@ const TOPICS = [
   },
   {
     title: "Billing & subscriptions",
-    body: "Purchases through Google Play are managed in the Play Store → Payments & subscriptions. For web checkout issues, include your receipt email when you contact us.",
+    body: "Purchases through Google Play are managed in the Play Store → Payments & subscriptions. For refunds and cancellation details, see our Refund Policy. For web checkout issues, include your receipt email when you contact us.",
   },
   {
     title: "Shared access & family",
@@ -82,6 +82,9 @@ export default function SupportPage() {
         </li>
         <li>
           <Link href="/terms-of-service">Terms of Service</Link>
+        </li>
+        <li>
+          <Link href="/refund-policy">Refund Policy</Link>
         </li>
       </ul>
 

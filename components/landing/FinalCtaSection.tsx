@@ -1,3 +1,4 @@
+import { DownloadAppButton } from "./waitlist/DownloadAppButton";
 import { PlayIcon } from "./ui/PlayIcon";
 import { Reveal } from "./ui/Reveal";
 
@@ -24,14 +25,16 @@ export function FinalCtaSection({ playUrl }: FinalCtaSectionProps) {
             Free baby tracker &amp; diary app — your first 7 days include full Plus access.
           </p>
           <p className="!text-white/65 !text-sm !mb-8">No credit card. No commitments. Cancel any time.</p>
-          <a
-            href={playUrl}
+          <DownloadAppButton
+            playUrl={playUrl}
+            variant="final"
+            source="final-cta"
             className="inline-flex items-center gap-2.5 px-8 py-4 text-base font-bold text-[#d94f82] bg-white rounded-full no-underline shadow-[0_12px_36px_rgb(28_20_40/20%)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_18px_48px_rgb(28_20_40/26%)]"
-            aria-label="Download MamaNote free on Google Play"
+            aria-label="Get notified when MamaNote launches"
           >
             <PlayIcon />
-             Google Play Download
-          </a>
+            Get the app — notify me
+          </DownloadAppButton>
         </Reveal>
       </div>
     </section>

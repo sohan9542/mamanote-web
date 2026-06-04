@@ -1,5 +1,5 @@
 const FALLBACK =
-  "https://play.google.com/store/apps/details?id=com.mamanote.app";
+  "https://play.google.com/store/apps/details?id=mamanoteapp.com";
 
 export function getPlayStoreUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_PLAY_STORE_URL?.trim();

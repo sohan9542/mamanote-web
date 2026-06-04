@@ -7,7 +7,7 @@ import type { StaticImageData } from "next/image";
 import logo from "@/assets/logo.png";
 import { cn } from "@/lib/cn";
 import { LOGO_ALT } from "@/lib/landing-seo";
-import { navCta } from "./styles";
+import { DownloadAppButton } from "./waitlist/DownloadAppButton";
 
 type LandingHeaderProps = {
   playUrl: string;
@@ -37,9 +37,9 @@ export function LandingHeader({ playUrl }: LandingHeaderProps) {
           <a href="#faq" className="text-[0.9375rem] font-medium text-[#5c4f7a] no-underline px-[13px] py-2 rounded-[10px] transition-colors hover:text-[#1c1428] hover:bg-[#f5f0ff]">
             FAQ
           </a>
-          <a href={playUrl} className={navCta}>
-            Try Free
-          </a>
+          <DownloadAppButton playUrl={playUrl} variant="nav" source="header-desktop">
+            Get the app
+          </DownloadAppButton>
         </div>
 
         <button
@@ -74,9 +74,15 @@ export function LandingHeader({ playUrl }: LandingHeaderProps) {
         <a href="#faq" onClick={close} className="text-base font-medium text-[#5c4f7a] no-underline py-2.5 border-b border-[#f5f0ff]">
           FAQ
         </a>
-        <a href={playUrl} className={cn(navCta, "text-center mt-1.5 ml-0")} onClick={close}>
-          Try Free
-        </a>
+        <DownloadAppButton
+          playUrl={playUrl}
+          variant="nav"
+          source="header-mobile"
+          className="text-center mt-1.5 ml-0"
+          onClick={close}
+        >
+          Get the app
+        </DownloadAppButton>
       </nav>
     </header>
   );

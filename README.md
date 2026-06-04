@@ -26,8 +26,15 @@ Data is fetched server-side from Supabase Edge Function `get-shared-activities`.
 | --- | --- | --- |
 | `SUPABASE_URL` | Yes | e.g. `https://xxxxx.supabase.co` |
 | `SUPABASE_ANON_KEY` | Yes | Supabase anon key (server-side only) |
-| `NEXT_PUBLIC_APP_STORE_URL` | No | Footer download CTA |
-| `NEXT_PUBLIC_PLAY_STORE_URL` | No | Footer download CTA |
+| `NEXT_PUBLIC_APP_STORE_URL` | No | Footer download CTA (when live) |
+| `NEXT_PUBLIC_PLAY_STORE_URL` | No | Footer download CTA (when live) |
+| `NEXT_PUBLIC_APP_DOWNLOAD_LIVE` | No | `true` = store links; default = launch waitlist modal |
+
+### Launch waitlist (pre–app store)
+
+Download / “Get the app” buttons open an email signup modal. Emails are stored in Supabase table `launch_waitlist` via `POST /api/waitlist`.
+
+Apply the migration in [supabase/migrations/20260604120000_launch_waitlist.sql](supabase/migrations/20260604120000_launch_waitlist.sql) (Supabase SQL editor or `supabase db push`). Requires `SUPABASE_URL` and `SUPABASE_ANON_KEY` on the site.
 
 ### Mobile app
 

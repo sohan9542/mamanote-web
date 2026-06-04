@@ -11,11 +11,13 @@ import { PricingSection } from "./PricingSection";
 import { ShowcaseSection } from "./ShowcaseSection";
 import { SHOWCASES } from "./data/showcases";
 import { getPlayStoreUrl } from "./lib/play-store-url";
+import { WaitlistShell } from "./waitlist/WaitlistShell";
 
 export default function LandingPage() {
   const playUrl = getPlayStoreUrl();
 
   return (
+    <WaitlistShell>
     <div className="min-h-screen overflow-x-hidden bg-[#fffbf8] text-[#1c1428] font-[family-name:var(--font-jakarta),system-ui,sans-serif] antialiased">
       <IntroSplash />
       <LandingHeader playUrl={playUrl} />
@@ -33,5 +35,6 @@ export default function LandingPage() {
 
       <LandingFooter />
     </div>
+    </WaitlistShell>
   );
 }

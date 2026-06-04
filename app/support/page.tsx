@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPageLayout } from "@/components/legal/LegalPageLayout";
-import { getPlayStoreUrl } from "@/components/landing/lib/play-store-url";
-import { btnPrimary, btnGhost } from "@/components/landing/styles";
-import { cn } from "@/lib/cn";
+import { SupportPageActions } from "@/components/support/SupportPageActions";
 
 export const metadata: Metadata = {
   title: "Support",
@@ -36,8 +34,6 @@ const TOPICS = [
 ] as const;
 
 export default function SupportPage() {
-  const playUrl = getPlayStoreUrl();
-
   return (
     <LegalPageLayout title="Support" lastUpdated={LAST_UPDATED}>
       <p>
@@ -88,14 +84,7 @@ export default function SupportPage() {
         </li>
       </ul>
 
-      <div className="not-legal-prose mt-10 flex flex-wrap gap-3">
-        <a href={playUrl} className={btnPrimary}>
-          Download on Google Play
-        </a>
-        <a href="mailto:support@mamanoteapp.com" className={cn(btnGhost, "inline-flex")}>
-          Email support
-        </a>
-      </div>
+      <SupportPageActions />
     </LegalPageLayout>
   );
 }

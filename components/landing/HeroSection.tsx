@@ -2,7 +2,8 @@ import Image from "next/image";
 import type { StaticImageData } from "next/image";
 import p1 from "@/assets/p1.png";
 import { cn } from "@/lib/cn";
-import { btnGhost, btnPrimary, h1Class } from "./styles";
+import { btnGhost, h1Class } from "./styles";
+import { DownloadAppButton } from "./waitlist/DownloadAppButton";
 import { PlayIcon } from "./ui/PlayIcon";
 import { Reveal } from "./ui/Reveal";
 
@@ -47,10 +48,16 @@ export function HeroSection({ playUrl }: HeroSectionProps) {
             </p>
 
             <div className="flex items-center flex-wrap gap-3 max-sm:flex-col max-sm:items-stretch">
-              <a href={playUrl} className={cn(btnPrimary, "max-sm:justify-center")} aria-label="Download MamaNote baby tracker free on Google Play">
+              <DownloadAppButton
+                playUrl={playUrl}
+                variant="primary"
+                source="hero"
+                className="max-sm:justify-center"
+                aria-label="Get notified when MamaNote launches on Google Play"
+              >
                 <PlayIcon />
-                Download Free on Google Play
-              </a>
+                Get the app — notify me
+              </DownloadAppButton>
               <a href="#features" className={cn(btnGhost, "max-sm:justify-center")}>
                 See Features ↓
               </a>

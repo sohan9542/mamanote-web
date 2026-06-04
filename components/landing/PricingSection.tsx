@@ -1,5 +1,6 @@
 import { cn } from "@/lib/cn";
 import { PRICING } from "./data/pricing";
+import { DownloadAppButton } from "./waitlist/DownloadAppButton";
 import { eyebrowPink, h2Class, inner } from "./styles";
 import { Reveal } from "./ui/Reveal";
 
@@ -60,8 +61,10 @@ export function PricingSection({ playUrl }: PricingSectionProps) {
                   ))}
                 </ul>
 
-                <a
-                  href={playUrl}
+                <DownloadAppButton
+                  playUrl={playUrl}
+                  variant="pricing"
+                  source={`pricing-${plan.tier}`}
                   className={cn(
                     "inline-flex items-center justify-center w-full py-3.5 text-[0.9375rem] font-bold rounded-[14px] no-underline mt-auto transition-all duration-200 hover:-translate-y-px",
                     plan.ctaClass,
@@ -69,7 +72,7 @@ export function PricingSection({ playUrl }: PricingSectionProps) {
                   aria-label={`${plan.cta} — MamaNote ${plan.tier}`}
                 >
                   {plan.cta}
-                </a>
+                </DownloadAppButton>
                 <p className="text-[0.775rem] text-[#a899c0] text-center mt-2.5">{plan.trialNote}</p>
               </div>
             </Reveal>

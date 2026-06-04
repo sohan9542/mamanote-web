@@ -36,13 +36,13 @@ export default function RefundPolicyPage() {
       </p>
       <p>To request a refund or ask about a charge:</p>
       <ul>
-        <li>Email <a href="mailto:support@mamanote.app">support@mamanote.app</a> from the address used at checkout</li>
+        <li>Email <a href="mailto:support@mamanoteapp.com">support@mamanoteapp.com</a> from the address used at checkout</li>
         <li>Include your receipt email, purchase date, plan type (Monthly, Annual, or Lifetime), and reason for the request</li>
         <li>We will review eligible requests with our payment provider, typically within 5–10 business days</li>
       </ul>
       <p>
         To cancel a recurring subscription, use the link in your Paddle receipt email or contact us at{" "}
-        <a href="mailto:support@mamanote.app">support@mamanote.app</a>. Canceling stops future charges; it does not
+        <a href="mailto:support@mamanoteapp.com">support@mamanoteapp.com</a>. Canceling stops future charges; it does not
         automatically refund the current billing period unless required by law or approved under our refund review.
       </p>
 
@@ -104,7 +104,7 @@ export default function RefundPolicyPage() {
       <h2>9. Contact</h2>
       <p>
         Questions about billing or refunds? Email{" "}
-        <a href="mailto:support@mamanote.app">support@mamanote.app</a> or visit our{" "}
+        <a href="mailto:support@mamanoteapp.com">support@mamanoteapp.com</a> or visit our{" "}
         <a href="/support">Support page</a>. See also our{" "}
         <a href="/terms-of-service">Terms of Service</a> and{" "}
         <a href="/privacy-policy">Privacy Policy</a>.

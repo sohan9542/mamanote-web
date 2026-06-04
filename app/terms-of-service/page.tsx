@@ -130,7 +130,7 @@ export default function TermsOfServicePage() {
       <h2>13. Contact</h2>
       <p>
         For questions about these Terms, contact{" "}
-        <a href="mailto:support@mamanote.app">support@mamanote.app</a> or visit{" "}
+        <a href="mailto:support@mamanoteapp.com">support@mamanoteapp.com</a> or visit{" "}
         <a href="/support">Support</a>.
       </p>
     </LegalPageLayout>

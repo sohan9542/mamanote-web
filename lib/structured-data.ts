@@ -18,11 +18,11 @@ export function buildOrganizationSchema({ baseUrl, logoUrl }: SchemaContext) {
     },
     image: logoUrl,
     description: LANDING_SEO.description,
-    email: "support@mamanote.app",
+    email: "support@mamanoteapp.com",
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "support@mamanote.app",
+      email: "support@mamanoteapp.com",
       availableLanguage: ["English"],
     },
   };

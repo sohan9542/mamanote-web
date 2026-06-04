@@ -16,7 +16,7 @@ MamaNote is a baby tracker and diary Android app for new parents. Track breastfe
 
 - Name: MamaNote
 - Website: ${base}
-- Support email: support@mamanote.app
+- Support email: support@mamanoteapp.com
 - Product: Baby tracker & diary mobile app (Android / Google Play)
 
 ## Key pages

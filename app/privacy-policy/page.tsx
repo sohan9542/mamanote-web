@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
       <p>
         We retain your account and activity data while your account is active. You may request deletion of your account and
         associated data by contacting us at{" "}
-        <a href="mailto:support@mamanote.app">support@mamanote.app</a>. Some information may be retained where required by
+        <a href="mailto:support@mamanoteapp.com">support@mamanoteapp.com</a>. Some information may be retained where required by
         law or for legitimate business purposes (e.g., payment records).
       </p>
 
@@ -116,7 +116,7 @@ export default function PrivacyPolicyPage() {
       <h2>11. Contact us</h2>
       <p>
         Questions about this Privacy Policy? Email{" "}
-        <a href="mailto:support@mamanote.app">support@mamanote.app</a> or visit our{" "}
+        <a href="mailto:support@mamanoteapp.com">support@mamanoteapp.com</a> or visit our{" "}
         <a href="/support">Support page</a>.
       </p>
     </LegalPageLayout>

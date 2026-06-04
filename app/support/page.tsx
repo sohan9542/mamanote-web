@@ -19,7 +19,7 @@ const TOPICS = [
   },
   {
     title: "Billing & subscriptions",
-    body: "Plus is purchased on our website (not Google Play billing). Payments are processed by Paddle. For refunds, cancellations, or billing questions, see our Refund Policy or email support@mamanote.app with your receipt.",
+    body: "Plus is purchased on our website (not Google Play billing). Payments are processed by Paddle. For refunds, cancellations, or billing questions, see our Refund Policy or email support@mamanoteapp.com with your receipt.",
   },
   {
     title: "Shared access & family",
@@ -31,7 +31,7 @@ const TOPICS = [
   },
   {
     title: "Delete my account",
-    body: "Email support@mamanote.app from the address linked to your account and ask for account deletion. We will confirm once processed.",
+    body: "Email support@mamanoteapp.com from the address linked to your account and ask for account deletion. We will confirm once processed.",
   },
 ] as const;
 
@@ -60,8 +60,8 @@ export default function SupportPage() {
       <h2>Contact us</h2>
       <p>
         Email:{" "}
-        <a href="mailto:support@mamanote.app" className="font-semibold">
-          support@mamanote.app
+        <a href="mailto:support@mamanoteapp.com" className="font-semibold">
+          support@mamanoteapp.com
         </a>
       </p>
       <p>When contacting support, please include:</p>
@@ -92,7 +92,7 @@ export default function SupportPage() {
         <a href={playUrl} className={btnPrimary}>
           Download on Google Play
         </a>
-        <a href="mailto:support@mamanote.app" className={cn(btnGhost, "inline-flex")}>
+        <a href="mailto:support@mamanoteapp.com" className={cn(btnGhost, "inline-flex")}>
           Email support
         </a>
       </div>
